@@ -46,11 +46,11 @@ Kroki, aby nadać dostęp do grupy roboczej:
 
 ![image](https://github.com/user-attachments/assets/cc65af7b-c318-4768-ad6f-1acd0d7e798d)
 
-4)Dodaj nowego użytkownika, wpisując jego adres e-mail.
+4) Dodaj nowego użytkownika, wpisując jego adres e-mail.
 
 ![image](https://github.com/user-attachments/assets/0179fb23-6d2d-499d-aa33-13318539f0a4)
 
-5)Określ, jakie uprawnienia mają otrzymać:
+5) Określ, jakie uprawnienia mają otrzymać:
 
 Administrator (Admin): Pełny dostęp do wszystkich funkcji, łącznie z możliwością nadawania uprawnień innym.
 Członek (Member): Może edytować i udostępniać zawartość grupy roboczej, ale nie ma pełnej kontroli administracyjnej.
@@ -59,4 +59,124 @@ Widzący (Viewer): Może jedynie przeglądać zawartość grupy roboczej, bez mo
 
 Pamiętaj !!! 
 Aby nadać dostęp innym użytkownikom do grupy roboczej, musisz mieć rolę Administratora w tej grupie roboczej.
+
+
+
+-----------------
+
+Super! teraz wiemy jak dodawać użytkowników do grupy roboczej !!!
+
+A co jeśli nie chcemy aby użytkownim miał do niej dostęp tylko mógł przeglądać jeden raport ?
+Jest na to rozwiązanie :) 
+
+Kroki, aby nadać dostęp do raportu:
+
+1) Zaloguj się do Power BI Service.
+
+2) Przejdź do raportu, który chcesz udostępnić.
+
+![image](https://github.com/user-attachments/assets/6eb77676-c0d2-471c-8db4-1887a2919fc2)
+
+3) Kliknij przycisk Udostępnij.
+
+4) Wprowadź adres e-mail użytkownika lub grupy, której chcesz nadać dostęp.
+
+![image](https://github.com/user-attachments/assets/f79b9ff2-fed8-4a4f-b771-fcb01098b256)
+
+5) Określ poziom dostępu: możliwość wyświetlania (view) raportu lub dodatkowe opcje, jak edytowanie (edit), jeśli są dostępne.
+
+![image](https://github.com/user-attachments/assets/d4af1da7-69e2-41a6-9793-9cd720c1d8dc)
+
+(Opcjonalnie) Możesz dodać wiadomość i wysłać powiadomienie do użytkownika !!!
+
+Dostępne uprawnienia dla raportu:
+
+View (Wyświetlanie): Użytkownik ma prawo tylko do przeglądania raportu, nie ma możliwości edycji.
+
+Reshare (Ponowne udostępnianie): Umożliwia udostępnianie raportu innym użytkownikom, jeśli taka opcja jest włączona.
+
+Build (Tworzenie na bazie datasetu): Użytkownicy z tym uprawnieniem mogą tworzyć nowe raporty na bazie datasetu z tego raportu.
+
+Aby udostępniać raporty innym użytkownikom, musisz posiadać jedno z poniższych uprawnień:
+
+- Właściciel raportu 
+
+- Administrator grupy roboczej, w której raport się znajduje
+
+- Członek grupy roboczej z uprawnieniem do edycji raportów.
+
+
+---------------
+
+Przejdźmy do ostatniego kroku czyli nadawanie uprawnień na poziomie wiersza.
+
+Wyobraźmy sobie, że w naszej firmie mamy kilku dyrektorów sprzedaży i każdy z nich ma przypisaną swoją sieć sklepów.
+Naszym głównym założeniem jest zablokowanie raportu dla dyrektora sprzedaży, który wybrał złą sieć sklepów (czyli taką którą się nie zajmuje).
+Nie chcemy aby miał dostęp do nie swoich danych. 
+Kolejnym założeniem jest fakt że Prezes ma mieć dostęp do wszystkich danych czyli wszystkich sieci sklepów, tak aby mógł kontrolować wyniki dyrektorów sprzedaży.
+
+Wydaje się troche skomplikowane prawda ? 
+Zapewniam, że po tym wpisie wszystko stanie się jasne :) !
+
+Aby nadać dostęp do grupy roboczej czy wybranego raportu musieliśmy pracować w app powerbi.
+Aby dodać uprawnienia na poziomie wiersza musimy działać z poziomu Power BI DESKTOP. !!!!
+
+Zaczynajmy ! 
+
+W pierszym korku kierujemy się do Model View :
+
+![image](https://github.com/user-attachments/assets/de7f3171-01ec-4c3a-8d1d-19973cff1524)
+
+Następnie w prawym panelu strony wybieramy sekcje MODEL.
+
+![image](https://github.com/user-attachments/assets/83fcbef5-7ab7-4809-8f79-7d99aa25a87f)
+
+Szukamy sekcji Roles i klikamy Manage roles.
+
+![image](https://github.com/user-attachments/assets/9762bddb-d6c7-4b23-935e-24162cfafcb6)
+
+Result
+
+![image](https://github.com/user-attachments/assets/d513e814-da37-4d03-ab1d-82e67234c93b)
+
+Dodajemy nową rolę i nazywamy ją XXX :
+
+![image](https://github.com/user-attachments/assets/b8bcdd07-9558-4883-9f9b-6f9c7b988a68)
+
+Wybieramy tabelę na której będą działać uprawnienia oraz poziom nadawania uprawnień w naszym przypadku będzie to imie i nazwisko dyrektora sprzedaży.
+
+
+![image](https://github.com/user-attachments/assets/e32d6cc5-ce97-4867-8909-0fc191a4059c)
+
+
+![image](https://github.com/user-attachments/assets/2185fe19-fa71-49ee-8f78-babc583a3f95)
+
+Wybieramy aby kolumna Imie i nazwisko  była równa nazwisku naszego dyrektora.
+
+![image](https://github.com/user-attachments/assets/7ca027ee-9e33-4da3-8089-dc96fee7096b)
+
+teraz gdy już to zrobiliśmy zostaje tylko jedno zadanie !!!
+
+Wracamy do app powerbi do swojej grupy roboczej i wybieramy źródło danych swojego raportu.
+
+![image](https://github.com/user-attachments/assets/7592286a-d9db-447a-93a3-e9de214d51d5)
+
+W tewj sekcji możemy zobaczyć liuste naszych dyrektorów oraz liste osób które mają dostęp do ich danych !!!
+
+![image](https://github.com/user-attachments/assets/81d9bc3f-0642-4ded-bfc2-00c2f3f0f409)
+
+
+
+
+That’s the end of this post!
+
+I hope you will use it in your work 🚀
+
+Best Regards, Mateusz Rajca
+
+
+
+
+
+
 
