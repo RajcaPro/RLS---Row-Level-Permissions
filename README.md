@@ -1,137 +1,132 @@
 # RLS---Row-Level-Permissions
 ----------
-W dzisiejszym wpisie przyjrzymy się dwóm ważnym aspektom zarządzania dostępami: nadawaniu dostępu do pojedynczego raportu oraz do grupy roboczej (workspace).
-Omówimy również różnice między tymi dwoma sposobami oraz wymagane uprawnienia potrzebne do nadawania takich dostępów.
+In today's post, we will look at two important aspects of access management: granting access to a single report and to a workspace. We will also discuss the differences between these two methods and the required permissions needed to grant such access.
 
-Zacznijmy od zadania sobie najważniejszego pytania, jaką wysokie uprawnienia w grupie roboczej musze posiadać aby móc nadawać przypisania/role innym użytkownikom?
-Odpowiedź jest prosta:  aby nadawać dostęp do grupy roboczej innym użytkownikom, musisz mieć rolę "Administratora" w tej grupie roboczej.
-To kluczowy moment, ponieważ bez tej roli nie będziemy nawet widzieć opcji do sekcji nadawania uprawnień.
+Let's start by asking the most important question: what high-level permissions do I need in a workspace to assign roles to other users?
+The answer is simple: to grant access to a workspace to other users, you must have the "Administrator" role in that workspace. This is a key point because without this role, you won't even see the options for the permissions section.
 
-Jest jeszcze jedna kluczowa rzecz! :
+There is one more important thing!
 
-Aby mieć rolę Administratora grupy roboczej w Power BI, użytkownik musi mieć subskrypcję Power BI Pro lub korzystać z Power BI Premium.
+To have the Administrator role in a Power BI workspace, the user must have a Power BI Pro subscription or use Power BI Premium.
 
-Jeśli grupa robocza jest ustawiona na korzystanie z Power BI Premium, Administrator grupy roboczej musi mieć licencję Pro, aby zarządzać członkami i dostępem, ale inni użytkownicy mogą mieć dostęp do zawartości bez posiadania licencji Pro, o ile są w grupie roboczej.
+If the workspace is set to use Power BI Premium, the workspace Administrator must have a Pro license to manage members and access. However, other users can access the content without having a Pro license as long as they are in the workspace.
 
-Ale nie martwcie się! Użytkownicy, którzy korzystają z wersji próbnej Power BI Pro, również mogą pełnić rolę Administratora grupy roboczej. Przynajmniej przez jakiś czas ;D 
+But don’t worry! Users who are using the Power BI Pro trial can also serve as the workspace Administrator, at least for some time.
 
 --------------------
 
-Teraz możemy przejść do daleszej części i omówić po krótce dostępne role oraz ich możliwości.
+Now we can move on to the next part and briefly discuss the available roles and their capabilities.
 
-Dostępne role w grupie roboczej:
+Available roles in a workspace:
 
-Administrator (Admin): Pełna kontrola nad grupą roboczą. Może zarządzać użytkownikami i ich uprawnieniami, edytować i usuwać zasoby.
+Administrator (Admin): Full control over the workspace. Can manage users and their permissions, edit, and delete resources.
 
-Członek (Member): Może tworzyć, edytować i usuwać raporty, ale nie ma dostępu do zarządzania użytkownikami.
+Member: Can create, edit, and delete reports but does not have access to manage users.
 
-Dostawca treści (Contributor): Może edytować raporty i zestawy danych, ale nie ma dostępu do zarządzania grupą.
+Contributor: Can edit reports and datasets but does not have access to manage the workspace.
 
-Widzący (Viewer): Może tylko przeglądać raporty i inne zasoby, bez możliwości edycji.
+Viewer: Can only view reports and other resources without the ability to edit.
 
 
 -----------
 
-Z powyższą wiedzą możemuy już zająć się nadawaniem uprawnień do grupy roboczej !!!
+With the above knowledge, we can now focus on granting permissions to the workspace!
 
-Kroki, aby nadać dostęp do grupy roboczej:
+Steps to grant access to a workspace:
 
-1) Zaloguj się do Power BI Service.
+1) Log in to Power BI Service.
 
-2) Przejdź do grupy roboczej, do której chcesz nadać dostęp.
+2) Go to the workspace where you want to grant access.
 
 ![image](https://github.com/user-attachments/assets/3e788f9a-ad0c-43cb-bb6a-e6af13fa0cd2)
 
-3) Kliknij ikonę Zarządzaj użytkownikami lub Członkowie (Members).
+3) Click on the Manage Users icon or Members.
 
 ![image](https://github.com/user-attachments/assets/cc65af7b-c318-4768-ad6f-1acd0d7e798d)
 
-4) Dodaj nowego użytkownika, wpisując jego adres e-mail.
+4) Add a new user by entering their email address.
 
 ![image](https://github.com/user-attachments/assets/0179fb23-6d2d-499d-aa33-13318539f0a4)
 
-5) Określ, jakie uprawnienia mają otrzymać:
+5) Specify what permissions they should receive:
 
-Administrator (Admin): Pełny dostęp do wszystkich funkcji, łącznie z możliwością nadawania uprawnień innym.
-Członek (Member): Może edytować i udostępniać zawartość grupy roboczej, ale nie ma pełnej kontroli administracyjnej.
-Dostawca treści (Contributor): Może edytować zawartość (np. raporty i dashboardy), ale nie może zarządzać grupą roboczą ani nadawać uprawnień.
-Widzący (Viewer): Może jedynie przeglądać zawartość grupy roboczej, bez możliwości edytowania lub tworzenia nowych zasobów.
+Administrator (Admin): Full access to all features, including the ability to grant permissions to others.
+Member: Can edit and share the content of the workspace, but does not have full administrative control.
+Contributor: Can edit content (e.g., reports and dashboards) but cannot manage the workspace or grant permissions.
+Viewer: Can only view the content of the workspace, with no ability to edit or create new resources.
 
-Pamiętaj !!! 
-Aby nadać dostęp innym użytkownikom do grupy roboczej, musisz mieć rolę Administratora w tej grupie roboczej.
+Remember!!!
+To grant access to other users in the workspace, you must have the Administrator role in that workspace.
 
 
 
 -----------------
 
-Super! teraz wiemy jak dodawać użytkowników do grupy roboczej !!!
+Great! Now we know how to add users to a workspace!!!
 
-A co jeśli nie chcemy aby użytkownim miał do niej dostęp tylko mógł przeglądać jeden raport ?
-Jest na to rozwiązanie :) 
+But what if we don’t want users to have access to the entire workspace, only to view a single report?
+There’s a solution for that! :)
 
-Kroki, aby nadać dostęp do raportu:
+Steps to grant access to a report:
 
-1) Zaloguj się do Power BI Service.
+1) Log in to Power BI Service.
 
-2) Przejdź do raportu, który chcesz udostępnić.
+2) Go to the report you want to share.
 
 ![image](https://github.com/user-attachments/assets/6eb77676-c0d2-471c-8db4-1887a2919fc2)
 
-3) Kliknij przycisk Udostępnij.
+3) Click the Share button.
 
-4) Wprowadź adres e-mail użytkownika lub grupy, której chcesz nadać dostęp.
+4) Enter the email address of the user or group you want to grant access to.
 
 ![image](https://github.com/user-attachments/assets/f79b9ff2-fed8-4a4f-b771-fcb01098b256)
 
-5) Określ poziom dostępu: możliwość wyświetlania (view) raportu lub dodatkowe opcje, jak edytowanie (edit), jeśli są dostępne.
+5) Specify the access level: the ability to view (view) the report or additional options, such as editing (edit), if available.
 
 ![image](https://github.com/user-attachments/assets/d4af1da7-69e2-41a6-9793-9cd720c1d8dc)
 
-(Opcjonalnie) Możesz dodać wiadomość i wysłać powiadomienie do użytkownika !!!
+(Optional) You can add a message and send a notification to the user!
 
-Dostępne uprawnienia dla raportu:
+Available permissions for the report:
 
-View (Wyświetlanie): Użytkownik ma prawo tylko do przeglądania raportu, nie ma możliwości edycji.
+View: The user can only view the report and cannot edit it.
 
-Reshare (Ponowne udostępnianie): Umożliwia udostępnianie raportu innym użytkownikom, jeśli taka opcja jest włączona.
+Reshare: Allows the user to share the report with other users if this option is enabled.
 
-Build (Tworzenie na bazie datasetu): Użytkownicy z tym uprawnieniem mogą tworzyć nowe raporty na bazie datasetu z tego raportu.
+Build: Users with this permission can create new reports based on the dataset from this report.
 
-Aby udostępniać raporty innym użytkownikom, musisz posiadać jedno z poniższych uprawnień:
+To share reports with other users, you must have one of the following permissions:
 
-- Właściciel raportu 
+- Owner of the report
 
-- Administrator grupy roboczej, w której raport się znajduje
+- Administrator of the workspace where the report is located
 
-- Członek grupy roboczej z uprawnieniem do edycji raportów.
+- Member of the workspace with permission to edit reports.
 
 
 ---------------
 
-Przejdźmy do ostatniego kroku czyli nadawanie uprawnień na poziomie wiersza.
+Let's move on to the final step, which is granting row-level permissions. ✨✨
 
-Wyobraźmy sobie, że w naszej firmie mamy kilku dyrektorów sprzedaży i każdy z nich ma przypisaną swoją sieć sklepów.
-Naszym głównym założeniem jest zablokowanie raportu dla dyrektora sprzedaży, który wybrał złą sieć sklepów (czyli taką którą się nie zajmuje).
-Nie chcemy aby miał dostęp do nie swoich danych. 
-Kolejnym założeniem jest fakt że Prezes ma mieć dostęp do wszystkich danych czyli wszystkich sieci sklepów, tak aby mógł kontrolować wyniki dyrektorów sprzedaży.
+Imagine that in our company, we have several sales directors, and each of them is assigned to their own network of stores. Our main goal is to block the report for the sales director who selected the wrong network of stores (meaning one they do not manage). We don't want them to have access to data that isn't theirs. Another requirement is that the CEO should have access to all data, meaning all networks of stores, so they can monitor the performance of the sales directors.
 
-Wydaje się troche skomplikowane prawda ? 
-Zapewniam, że po tym wpisie wszystko stanie się jasne :) !
+It seems a bit complicated, right?
+I assure you that after this post, everything will become clear! :) ✨🚀
 
-Aby nadać dostęp do grupy roboczej czy wybranego raportu musieliśmy pracować w app powerbi.
-Aby dodać uprawnienia na poziomie wiersza musimy działać z poziomu Power BI DESKTOP. !!!!
+To grant access to a workspace or a selected report, we had to work in the Power BI app.
+To add row-level permissions, we need to work from Power BI DESKTOP!!!
 
-Zaczynajmy ! 
+Let’s get started!
 
-W pierszym korku kierujemy się do Model View :
+In the first step, we go to Model View:
 
 ![image](https://github.com/user-attachments/assets/de7f3171-01ec-4c3a-8d1d-19973cff1524)
 
-Następnie w prawym panelu strony wybieramy sekcje MODEL.
+Next, in the right panel of the page, select the MODEL section.
 
 ![image](https://github.com/user-attachments/assets/83fcbef5-7ab7-4809-8f79-7d99aa25a87f)
 
-Szukamy sekcji Roles i klikamy Manage roles.
+We look for the Roles section and click on Manage roles.
 
 ![image](https://github.com/user-attachments/assets/9762bddb-d6c7-4b23-935e-24162cfafcb6)
 
@@ -139,11 +134,11 @@ Result
 
 ![image](https://github.com/user-attachments/assets/d513e814-da37-4d03-ab1d-82e67234c93b)
 
-Dodajemy nową rolę i nazywamy ją XXX :
+We add a new role and name it XXX:
 
 ![image](https://github.com/user-attachments/assets/b8bcdd07-9558-4883-9f9b-6f9c7b988a68)
 
-Wybieramy tabelę na której będą działać uprawnienia oraz poziom nadawania uprawnień w naszym przypadku będzie to imie i nazwisko dyrektora sprzedaży.
+We select the table on which the permissions will apply, and in our case, the level of permission will be based on the first and last name of the sales director.
 
 
 ![image](https://github.com/user-attachments/assets/e32d6cc5-ce97-4867-8909-0fc191a4059c)
@@ -151,22 +146,21 @@ Wybieramy tabelę na której będą działać uprawnienia oraz poziom nadawania 
 
 ![image](https://github.com/user-attachments/assets/2185fe19-fa71-49ee-8f78-babc583a3f95)
 
-Wybieramy aby kolumna Imie i nazwisko  była równa nazwisku naszego dyrektora.
+We select to make the column First and Last Name equal to the name of our sales director.
 
 ![image](https://github.com/user-attachments/assets/7ca027ee-9e33-4da3-8089-dc96fee7096b)
 
-teraz gdy już to zrobiliśmy zostaje tylko jedno zadanie !!!
+Now that we have done that, there is just one task left!!!
 
-Wracamy do app powerbi do swojej grupy roboczej i wybieramy źródło danych swojego raportu.
+We go back to the Power BI app to our workspace and select the data source for our report.
 
 ![image](https://github.com/user-attachments/assets/7592286a-d9db-447a-93a3-e9de214d51d5)
 
-W tewj sekcji możemy zobaczyć liste naszych dyrektorów oraz liste osób które mają dostęp do ich danych !!!
+In this section, we can see a list of our sales directors and a list of people who have access to their data!!!
 
 ![image](https://github.com/user-attachments/assets/91ca0811-615c-4cf9-81be-d0cbb920dd8b)
 
 
-![image](https://github.com/user-attachments/assets/27de6457-a1f2-4e0a-b16a-3f67a91872e7)
 
 
 
