@@ -166,6 +166,7 @@ W tewj sekcji możemy zobaczyć liste naszych dyrektorów oraz liste osób któr
 ![image](https://github.com/user-attachments/assets/91ca0811-615c-4cf9-81be-d0cbb920dd8b)
 
 
+![image](https://github.com/user-attachments/assets/27de6457-a1f2-4e0a-b16a-3f67a91872e7)
 
 
 
