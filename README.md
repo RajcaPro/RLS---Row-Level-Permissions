@@ -161,9 +161,10 @@ Wracamy do app powerbi do swojej grupy roboczej i wybieramy źródło danych swo
 
 ![image](https://github.com/user-attachments/assets/7592286a-d9db-447a-93a3-e9de214d51d5)
 
-W tewj sekcji możemy zobaczyć liuste naszych dyrektorów oraz liste osób które mają dostęp do ich danych !!!
+W tewj sekcji możemy zobaczyć liste naszych dyrektorów oraz liste osób które mają dostęp do ich danych !!!
 
-![image](https://github.com/user-attachments/assets/81d9bc3f-0642-4ded-bfc2-00c2f3f0f409)
+![image](https://github.com/user-attachments/assets/91ca0811-615c-4cf9-81be-d0cbb920dd8b)
+
 
 
 
